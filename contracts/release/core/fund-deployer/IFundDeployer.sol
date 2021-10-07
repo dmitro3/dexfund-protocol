@@ -14,11 +14,7 @@ pragma solidity 0.6.12;
 /// @title IFundDeployer Interface
 /// @author Enzyme Council <security@enzyme.finance>
 interface IFundDeployer {
-    enum ReleaseStatus {
-        PreLaunch,
-        Live,
-        Paused
-    }
+    enum ReleaseStatus {PreLaunch, Live, Paused}
 
     function getOwner() external view returns (address);
 

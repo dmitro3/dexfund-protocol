@@ -115,10 +115,10 @@ contract TrackedAssetsAdapter is AdapterBase, FundDeployerOwnerMixin {
         for (uint256 i; i < spendAssets.length; i++) {
             (uint256 valueInWeth, bool isValid) = ValueInterpreter(VALUE_INTERPRETER)
                 .calcCanonicalAssetValue(
-                    spendAssets[i],
-                    ERC20(spendAssets[i]).balanceOf(_vaultProxy),
-                    WETH_TOKEN
-                );
+                spendAssets[i],
+                ERC20(spendAssets[i]).balanceOf(_vaultProxy),
+                WETH_TOKEN
+            );
             require(isValid, "removeTrackedAssets: Invalid GAV");
             require(
                 valueInWeth <= dustToleranceInWethCopy,

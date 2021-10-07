@@ -827,7 +827,7 @@ contract ComptrollerLib is IComptroller, AssetFinalityResolver {
                 abi.encode(_redeemer, _sharesQuantity),
                 0
             )
-        {} catch (bytes memory reason) {
+         {} catch (bytes memory reason) {
             emit PreRedeemSharesHookFailed(reason, _redeemer, _sharesQuantity);
         }
     }

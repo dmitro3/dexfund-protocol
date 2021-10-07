@@ -1,13 +1,16 @@
 import { FundDeployerArgs } from '@enzymefinance/protocol';
 import { DeployFunction } from 'hardhat-deploy/types';
 
-import { loadConfig } from '../../../utils/config';
+import { loadConfig, saveConfig } from '../../../utils/config';
+import { mainnetConfig } from './../../config/Kovan';
 
 const fn: DeployFunction = async function (hre) {
   const {
     deployments: { deploy, get },
     ethers: { getSigners },
   } = hre;
+
+  await saveConfig(hre, mainnetConfig);
 
   const deployer = (await getSigners())[0];
   const config = await loadConfig(hre);
@@ -27,7 +30,7 @@ const fn: DeployFunction = async function (hre) {
   });
 };
 
-fn.tags = ['Release', 'FundDeployer'];
 fn.dependencies = ['Config', 'Dispatcher', 'VaultLib'];
+fn.tags = ['Release', 'FundDeployer'];
 
 export default fn;

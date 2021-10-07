@@ -319,7 +319,9 @@ contract PerformanceFee is FeeBase {
             int256(__calcUint256Max(_highWaterMark, _sharePriceWithoutPerformance)).sub(
                 int256(__calcUint256Max(_highWaterMark, _prevSharePrice))
             )
-        ).mul(int256(_netSharesSupply)).div(int256(SHARE_UNIT));
+        )
+            .mul(int256(_netSharesSupply))
+            .div(int256(SHARE_UNIT));
 
         int256 valueDueSinceLastSettled = superHWMValueSinceLastSettled.mul(int256(_feeRate)).div(
             int256(RATE_DIVISOR)

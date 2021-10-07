@@ -107,10 +107,10 @@ contract CurveLiquiditySethAdapter is
             address[] memory rewardsTokens,
             uint256[] memory rewardsTokenAmountsToUse
         ) = __curveGaugeV2ClaimRewardsAndPullBalances(
-                LIQUIDITY_GAUGE_TOKEN,
-                _vaultProxy,
-                useFullBalances
-            );
+            LIQUIDITY_GAUGE_TOKEN,
+            _vaultProxy,
+            useFullBalances
+        );
 
         // Swap all reward tokens to WETH via UniswapV2.
         // Note that if a reward token takes a fee on transfer,
@@ -156,10 +156,10 @@ contract CurveLiquiditySethAdapter is
             address[] memory rewardsTokens,
             uint256[] memory rewardsTokenAmountsToUse
         ) = __curveGaugeV2ClaimRewardsAndPullBalances(
-                LIQUIDITY_GAUGE_TOKEN,
-                _vaultProxy,
-                useFullBalances
-            );
+            LIQUIDITY_GAUGE_TOKEN,
+            _vaultProxy,
+            useFullBalances
+        );
 
         // Swap all reward tokens to the designated incomingAsset via UniswapV2.
         // Note that if a reward token takes a fee on transfer,

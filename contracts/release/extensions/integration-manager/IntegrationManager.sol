@@ -728,9 +728,8 @@ contract IntegrationManager is
                 outgoingAssets_[outgoingAssetsIndex] = _spendAssets[i];
                 outgoingAssetsIndex++;
             } else if (postCallSpendAssetBalances[i] > _preCallSpendAssetBalances[i]) {
-                increasedSpendAssetAmounts_[
-                    increasedSpendAssetsIndex
-                ] = postCallSpendAssetBalances[i].sub(_preCallSpendAssetBalances[i]);
+                increasedSpendAssetAmounts_[increasedSpendAssetsIndex] = postCallSpendAssetBalances[i]
+                    .sub(_preCallSpendAssetBalances[i]);
                 increasedSpendAssets_[increasedSpendAssetsIndex] = _spendAssets[i];
                 increasedSpendAssetsIndex++;
             }

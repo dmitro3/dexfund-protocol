@@ -108,9 +108,9 @@ contract GuaranteedRedemption is PreCallOnIntegrationValidatePolicyBase, FundDep
             return true;
         }
 
-        RedemptionWindow memory redemptionWindow = comptrollerProxyToRedemptionWindow[
-            _comptrollerProxy
-        ];
+
+            RedemptionWindow memory redemptionWindow
+         = comptrollerProxyToRedemptionWindow[_comptrollerProxy];
 
         // If no RedemptionWindow is set, the fund can never use redemption-blocking adapters
         if (redemptionWindow.startTimestamp == 0) {

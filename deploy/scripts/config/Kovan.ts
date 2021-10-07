@@ -198,4 +198,6 @@ fn.skip = async (hre) => {
   return chain !== 42;
 };
 
+export { mainnetConfig };
+
 export default fn;

@@ -27,10 +27,7 @@ contract MockSynthetixPriceSource is Ownable, ISynthetixExchangeRates {
     mapping(bytes32 => uint256) private fixedRate;
     mapping(bytes32 => AggregatorInfo) private currencyKeyToAggregator;
 
-    enum RateAsset {
-        ETH,
-        USD
-    }
+    enum RateAsset {ETH, USD}
 
     struct AggregatorInfo {
         address aggregator;
@@ -91,8 +88,10 @@ contract MockSynthetixPriceSource is Ownable, ISynthetixExchangeRates {
             if (aggregatorInfo.rateAsset == RateAsset.ETH) {
                 uint256 ethToUsd = uint256(
                     MockChainlinkPriceSource(
-                        getAggregatorFromCurrencyKey(bytes32("ETH")).aggregator
-                    ).latestAnswer()
+                        getAggregatorFromCurrencyKey(bytes32("ETH"))
+                            .aggregator
+                    )
+                        .latestAnswer()
                 );
                 rate_ = rate_.mul(ethToUsd).div(10**8);
             }

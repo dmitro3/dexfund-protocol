@@ -20,7 +20,7 @@ function accounts(networkName: string) {
     .filter(Boolean);
 }
 
-const mnemonic = 'test test test test test test test test test test test junk';
+const mnemonic = 'clutch captain shoe salt awake harvest setup primary inmate ugly among become';
 
 const config: HardhatUserConfig = {
   codeCoverage: {

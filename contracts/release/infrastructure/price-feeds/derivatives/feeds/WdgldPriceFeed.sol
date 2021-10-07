@@ -87,7 +87,8 @@ contract WdgldPriceFeed is IDerivativePriceFeed, MakerDaoMath {
                 GTR_CONSTANT,
                 ((block.timestamp).sub(WDGLD_GENESIS_TIMESTAMP)).div(28800), // 60 * 60 * 8 (8 hour periods)
                 GTR_PRECISION
-            ).div(10);
+            )
+                .div(10);
     }
 
     /// @notice Checks if an asset is supported by this price feed

@@ -147,7 +147,8 @@ contract ValueInterpreter is IValueInterpreter {
         // Handle case that asset is a derivative
         address derivativePriceFeed = IAggregatedDerivativePriceFeed(
             AGGREGATED_DERIVATIVE_PRICE_FEED
-        ).getPriceFeedForDerivative(_baseAsset);
+        )
+            .getPriceFeedForDerivative(_baseAsset);
         if (derivativePriceFeed != address(0)) {
             return __calcDerivativeValue(derivativePriceFeed, _baseAsset, _amount, _quoteAsset);
         }
@@ -166,7 +167,8 @@ contract ValueInterpreter is IValueInterpreter {
     ) private returns (uint256 value_, bool isValid_) {
         (address[] memory underlyings, uint256[] memory underlyingAmounts) = IDerivativePriceFeed(
             _derivativePriceFeed
-        ).calcUnderlyingValues(_derivative, _amount);
+        )
+            .calcUnderlyingValues(_derivative, _amount);
 
         require(underlyings.length > 0, "__calcDerivativeValue: No underlyings");
         require(

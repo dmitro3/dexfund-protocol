@@ -123,10 +123,10 @@ contract CurveLiquidityAaveAdapter is
             address[] memory rewardsTokens,
             uint256[] memory rewardsTokenAmountsToUse
         ) = __curveGaugeV2ClaimRewardsAndPullBalances(
-                LIQUIDITY_GAUGE_TOKEN,
-                _vaultProxy,
-                useFullBalances
-            );
+            LIQUIDITY_GAUGE_TOKEN,
+            _vaultProxy,
+            useFullBalances
+        );
 
         address intermediaryUnderlyingAsset = getAssetByPoolIndex(
             intermediaryUnderlyingAssetIndex,
@@ -150,9 +150,7 @@ contract CurveLiquidityAaveAdapter is
         );
         if (intermediaryUnderlyingAssetBalance > 0) {
             uint256[3] memory orderedUnderlyingAssetAmounts;
-            orderedUnderlyingAssetAmounts[
-                intermediaryUnderlyingAssetIndex
-            ] = intermediaryUnderlyingAssetBalance;
+            orderedUnderlyingAssetAmounts[intermediaryUnderlyingAssetIndex] = intermediaryUnderlyingAssetBalance;
 
             __curveAaveLend(
                 orderedUnderlyingAssetAmounts,
@@ -188,10 +186,10 @@ contract CurveLiquidityAaveAdapter is
             address[] memory rewardsTokens,
             uint256[] memory rewardsTokenAmountsToUse
         ) = __curveGaugeV2ClaimRewardsAndPullBalances(
-                LIQUIDITY_GAUGE_TOKEN,
-                _vaultProxy,
-                useFullBalances
-            );
+            LIQUIDITY_GAUGE_TOKEN,
+            _vaultProxy,
+            useFullBalances
+        );
 
         // Swap all reward tokens to the designated incomingAsset via UniswapV2.
         // Note that if a reward token takes a fee on transfer,

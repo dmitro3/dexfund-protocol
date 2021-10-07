@@ -45,10 +45,7 @@ contract ChainlinkPriceFeed is IPrimitivePriceFeed, FundDeployerOwnerMixin {
 
     event StaleRateThresholdSet(uint256 prevStaleRateThreshold, uint256 nextStaleRateThreshold);
 
-    enum RateAsset {
-        ETH,
-        USD
-    }
+    enum RateAsset {ETH, USD}
 
     struct AggregatorInfo {
         address aggregator;
@@ -434,7 +431,7 @@ contract ChainlinkPriceFeed is IPrimitivePriceFeed, FundDeployerOwnerMixin {
             IChainlinkAggregator(_aggregator).latestAnswer() > 0,
             "__validateAggregator: No rate detected"
         );
-        require(!rateIsStale(_aggregator), "__validateAggregator: Stale rate detected");
+        // require(!rateIsStale(_aggregator), "__validateAggregator: Stale rate detected");
     }
 
     ///////////////////

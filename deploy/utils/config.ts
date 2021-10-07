@@ -13,6 +13,7 @@ export async function saveConfig(hre: HardhatRuntimeEnvironment, data: Deploymen
 
 export async function loadConfig(hre: HardhatRuntimeEnvironment) {
   const deployment = await hre.deployments.get('Config');
+
   return deployment.linkedData as DeploymentConfig;
 }
 

@@ -40,10 +40,10 @@ abstract contract AssetFinalityResolver {
         if (currencyKey != 0) {
             address synthetixExchanger = ISynthetixAddressResolver(SYNTHETIX_ADDRESS_RESOLVER)
                 .requireAndGetAddress(
-                    "Exchanger",
-                    "finalizeAndGetAssetBalance: Missing Exchanger"
-                );
-            try ISynthetixExchanger(synthetixExchanger).settle(_target, currencyKey) {} catch {
+                "Exchanger",
+                "finalizeAndGetAssetBalance: Missing Exchanger"
+            );
+            try ISynthetixExchanger(synthetixExchanger).settle(_target, currencyKey)  {} catch {
                 require(!_requireFinality, "finalizeAndGetAssetBalance: Cannot settle Synth");
             }
         }

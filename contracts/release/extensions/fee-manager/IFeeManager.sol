@@ -25,14 +25,7 @@ interface IFeeManager {
         BuySharesCompleted,
         PreRedeemShares
     }
-    enum SettlementType {
-        None,
-        Direct,
-        Mint,
-        Burn,
-        MintSharesOutstanding,
-        BurnSharesOutstanding
-    }
+    enum SettlementType {None, Direct, Mint, Burn, MintSharesOutstanding, BurnSharesOutstanding}
 
     function invokeHook(
         FeeHook,
