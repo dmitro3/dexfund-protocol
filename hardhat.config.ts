@@ -20,6 +20,22 @@ function accounts(networkName: string) {
     .filter(Boolean);
 }
 
+function bscNode(networkName: string) {
+  const fallback = 'http://localhost:8545';
+  const uppercase = networkName.toUpperCase();
+  const uri = process.env[`BSC_NODE_${uppercase}`] || process.env.ETHEREUM_NODE || fallback;
+  return uri.replace('{{NETWORK}}', networkName);
+}
+
+function bscAccounts(networkName: string) {
+  const uppercase = networkName.toUpperCase();
+  const accounts = process.env[`BSC_ACCOUNTS_${uppercase}`] || process.env.ETHEREUM_ACCOUNTS || '';
+  return accounts
+    .split(',')
+    .map((account) => account.trim())
+    .filter(Boolean);
+}
+
 const mnemonic = 'clutch captain shoe salt awake harvest setup primary inmate ugly among become';
 
 const config: HardhatUserConfig = {
@@ -94,11 +110,11 @@ const config: HardhatUserConfig = {
         mnemonic,
       },
       forking: {
-        blockNumber: 12540501,
-        url: node('mainnet'), // May 31, 2021
+        // blockNumber: 12540501,
+        url: bscNode('mainnet'), // May 31, 2021
       },
       gas: 9500000,
-      gasPrice: 0, // TODO: Consider removing this again.
+      gasPrice: 1000000, // TODO: Consider removing this again.
       ...(process.env.COVERAGE && {
         allowUnlimitedContractSize: true,
       }),
@@ -112,6 +128,16 @@ const config: HardhatUserConfig = {
       hardfork: 'istanbul',
       accounts: accounts('mainnet'),
       url: node('mainnet'),
+    },
+    bscmainnet: {
+      hardfork: 'istanbul',
+      accounts: bscAccounts('mainnet'),
+      url: bscNode('mainnet'),
+    },
+    bsctestnet: {
+      hardfork: 'istanbul',
+      accounts: bscAccounts('testnet'),
+      url: bscNode('testnet'),
     },
   },
   paths: {

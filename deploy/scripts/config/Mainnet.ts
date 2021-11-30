@@ -418,7 +418,8 @@ fn.tags = ['Config'];
 fn.skip = async (hre) => {
   // Run this only for mainnet & mainnet forks.
   const chain = parseInt(await hre.getChainId());
-  return chain !== 31337 && chain !== 1;
+  console.log('chainId_mainnet: ', chain);
+  return chain !== 1;
 };
 
 export default fn;

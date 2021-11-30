@@ -49,10 +49,11 @@ contract SynthetixPriceFeed is IDerivativePriceFeed, FundDeployerOwnerMixin {
         ADDRESS_RESOLVER = _addressResolver;
         SUSD = _sUSD;
 
-        address[] memory sUSDSynths = new address[](1);
-        sUSDSynths[0] = _sUSD;
-
-        __addSynths(sUSDSynths);
+        if (_sUSD != address(0)) {
+            address[] memory sUSDSynths = new address[](1);
+            sUSDSynths[0] = _sUSD;
+            __addSynths(sUSDSynths);
+        }
         __addSynths(_synths);
     }
 

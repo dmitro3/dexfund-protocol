@@ -89,8 +89,11 @@ const fn: DeployFunction = async function (hre) {
     );
   }
 
-  const derivatives = derivativePairs.map(([derivative]) => derivative);
+  const derivatives: any[] = [];
+  // const derivatives = derivativePairs.map(([derivative]) => derivative);
   const feeds = derivativePairs.map(([, feed]) => feed);
+  // console.log('derivatives: ', derivatives);
+  // console.log('feed: ', aavePriceFeed, alphaHomoraV1PriceFeed);
 
   await deploy('AggregatedDerivativePriceFeed', {
     args: [fundDeployer.address, derivatives, feeds] as AggregatedDerivativePriceFeedArgs,
@@ -115,5 +118,10 @@ fn.dependencies = [
   'WdgldPriceFeed',
   'YearnVaultV2PriceFeed',
 ];
+// fn.skip = async (hre) => {
+//   // Skip this on kovan.
+//   const chain = parseInt(await hre.getChainId());
+//   return chain === 56 || chain === 31337;
+// };
 
 export default fn;

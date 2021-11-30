@@ -27,6 +27,8 @@ const fn: DeployFunction = async function (hre) {
   const aggregators = assets.map(([, aggregator]) => aggregator);
   const rateAssets = assets.map(([, , rateAsset]) => rateAsset);
 
+  console.log('chainlinkPriceFeed: ', primitives, aggregators, rateAssets);
+
   await deploy('ChainlinkPriceFeed', {
     args: [
       fundDeployer.address,

@@ -31,8 +31,12 @@
     "export:kovan": "hardhat export --network kovan --export deployments/kovan.json",
     "verify:kovan": "hardhat etherscan-verify --network kovan",
     "deploy:mainnet": "hardhat deploy --network mainnet",
+    "deploy:hardhat": "hardhat deploy --network hardhat",
     "export:mainnet": "hardhat export --network mainnet --export deployments/mainnet.json",
-    "verify:mainnet": "hardhat etherscan-verify --network mainnet"
+    "export:hardhat": "hardhat export --network localhost --export deployments/hardhat.json",
+    "verify:mainnet": "hardhat etherscan-verify --network mainnet",
+    "deploy:bsctestnet": "hardhat deploy --network bsctestnet",
+    "export:bsctestnet": "hardhat export --network bsctestnet --export deployments/bsctestnet.json"
   },
   "dependencies": {
     "@changesets/cli": "^2.17.0",

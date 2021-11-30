@@ -195,6 +195,7 @@ fn.tags = ['Config'];
 fn.skip = async (hre) => {
   // Run this only for kovan.
   const chain = parseInt(await hre.getChainId());
+  console.log('chainId_kovan: ', chain);
   return chain !== 42;
 };
 

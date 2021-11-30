@@ -28,5 +28,10 @@ const fn: DeployFunction = async function (hre) {
 
 fn.tags = ['Release', 'SynthetixPriceFeed'];
 fn.dependencies = ['Config', 'Dispatcher'];
+// fn.skip = async (hre) => {
+//   // Skip this on kovan.
+//   const chain = parseInt(await hre.getChainId());
+//   return chain === 56 || chain === 31337;
+// };
 
 export default fn;

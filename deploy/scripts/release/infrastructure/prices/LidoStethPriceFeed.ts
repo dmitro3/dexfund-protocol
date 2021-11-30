@@ -25,7 +25,7 @@ fn.dependencies = ['Config'];
 fn.skip = async (hre) => {
   // Skip this on kovan.
   const chain = parseInt(await hre.getChainId());
-  return chain === 42;
+  return chain === 42 || chain === 56 || chain === 31337 || chain === 97;
 };
 
 export default fn;

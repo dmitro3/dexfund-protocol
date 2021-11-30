@@ -11,11 +11,17 @@ const fn: DeployFunction = async function (hre) {
     .filter((item) => item.linkedData?.type === 'ADAPTER')
     .map((item) => item.address.toLowerCase());
 
+  console.log('register1: ', adapters);
   if (adapters.length) {
     const integrationManager = await get('IntegrationManager');
     const integrationManagerInstance = new IntegrationManager(integrationManager.address, deployer);
-    log('Registering adapters');
-    await integrationManagerInstance.registerAdapters(adapters);
+
+    log('Registering adapters', IntegrationManager);
+    try {
+      await integrationManagerInstance.registerAdapters(adapters);
+    } catch (e) {
+      console.log('registering adapters error: ', e);
+    }
   }
 
   // Register synthetix as a redemption blocking adapter.
