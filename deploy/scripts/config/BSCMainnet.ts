@@ -9,7 +9,6 @@ import { DeploymentConfig, saveConfig } from '../../utils/config';
 // WETH is not included as it is auto-included in the chainlink price feed
 
 const primitives = {
-  aave: '0xfb6115445bff7b52feb98650c87f44907e58f802',
   alpha: '0xa1faa113cbe53436df28ff0aee54275c13b40975',
   band: '0xad6caeb32cd2c308980a548bd0bc5aa4306c6c18',
   bnb: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
@@ -32,7 +31,6 @@ const primitives = {
 const weth = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
 
 const aggregators = {
-  aave: ['0xA8357BF572460fC40f4B0aCacbB2a6A61c89f475', ChainlinkRateAsset.USD],
   alpha: ['0x7bC032A7C19B1BdCb981D892854d090cfB0f238E', ChainlinkRateAsset.ETH],
   band: ['0xC78b99Ae87fF43535b0C782128DB3cB49c74A4d3', ChainlinkRateAsset.USD],
   bnb: ['0x0567F2323251f0Aab15c8dFb1967E4e8A7D42aeE', ChainlinkRateAsset.USD],
@@ -64,7 +62,6 @@ const pools = {
   busdUsdt: '0x7efaef62fddcca950418312c6c91aef321375a00',
   daiUsdc: '0xadbba1ef326a33fdb754f14e62a96d5278b942bd',
   daiUsdt: '0xf6f5ce9a91dd4fae2d2ed92e25f2a4dc8564f174',
-
   daiWeth: '0xc7c3ccce4fa25700fd5574da7e200ae28bbd36a3',
   linkWeth: '0x824eb9faDFb377394430d2744fa7C42916DE3eCe',
   sushiWeth: '0x7fbd09099838dd0b70068f07a9021d69d9b4813a',

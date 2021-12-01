@@ -432,10 +432,10 @@ contract ChainlinkPriceFeed is IPrimitivePriceFeed, FundDeployerOwnerMixin {
     function __validateAggregator(address _aggregator) private view {
         require(_aggregator != address(0), "__validateAggregator: Empty _aggregator");
 
-        // require(
-        //     IChainlinkAggregator(_aggregator).latestAnswer() > 0,
-        //     "__validateAggregator: No rate detected"
-        // );
+        require(
+            IChainlinkAggregator(_aggregator).latestAnswer() > 0,
+            "__validateAggregator: No rate detected"
+        );
         // require(!rateIsStale(_aggregator), "__validateAggregator: Stale rate detected");
     }
 
