@@ -3,6 +3,7 @@ import '@enzymefinance/hardhat/plugin';
 
 import { utils } from 'ethers';
 import { HardhatUserConfig } from 'hardhat/types';
+require('@nomiclabs/hardhat-etherscan');
 
 function node(networkName: string) {
   const fallback = 'http://localhost:8545';
@@ -155,6 +156,8 @@ const config: HardhatUserConfig = {
     },
     version: '0.6.12',
   },
+
+  bscscan: process.env.ETHERSCAN_API_KEY,
 };
 
 export default config;
