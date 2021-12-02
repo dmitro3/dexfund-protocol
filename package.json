@@ -39,7 +39,7 @@
     "export:bsctestnet": "hardhat export --network bsctestnet --export deployments/bsctestnet.json",
     "deploy:bscmainnet": "hardhat deploy --network bscmainnet",
     "export:bscmainnet": "hardhat export --network bscmainnet --export deployments/bscmainnet.json",
-    "verify:bscmainnet": "hardhat etherscan-verify --network bscmainnet",
+    "verify:bscmainnet": "hardhat etherscan-verify --network bscmainnet ",
     "fork:bsc": "npx hardhat node --fork https://speedy-nodes-nyc.moralis.io/2d756f760846a191cb646b2b/bsc/mainnet"
   },
   "dependencies": {
