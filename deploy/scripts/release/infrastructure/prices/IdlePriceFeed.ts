@@ -42,7 +42,7 @@ fn.dependencies = ['Config', 'FundDeployer'];
 fn.skip = async (hre) => {
   // Skip this on kovan.
   const chain = parseInt(await hre.getChainId());
-  return chain === 42;
+  return chain !== 1;
 };
 
 export default fn;

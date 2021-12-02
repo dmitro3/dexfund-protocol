@@ -11,7 +11,6 @@ import { DeploymentConfig, saveConfig } from '../../utils/config';
 const primitives = {
   alpha: '0xa1faa113cbe53436df28ff0aee54275c13b40975',
   band: '0xad6caeb32cd2c308980a548bd0bc5aa4306c6c18',
-  bnb: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   busd: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
   bzrx: '0x4b87642aedf10b642be4663db842ecc5a88bf5ba',
   comp: '0x52ce071bd9b1c4b00a0b92d298c512478cad67e8',
@@ -33,7 +32,6 @@ const weth = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
 const aggregators = {
   alpha: ['0x7bC032A7C19B1BdCb981D892854d090cfB0f238E', ChainlinkRateAsset.ETH],
   band: ['0xC78b99Ae87fF43535b0C782128DB3cB49c74A4d3', ChainlinkRateAsset.USD],
-  bnb: ['0x0567F2323251f0Aab15c8dFb1967E4e8A7D42aeE', ChainlinkRateAsset.USD],
   busd: ['0x87Ea38c9F24264Ec1Fff41B04ec94a97Caf99941', ChainlinkRateAsset.ETH],
   bzrx: ['0xFc362828930519f236ad0c8f126B7996562a695A', ChainlinkRateAsset.USD],
   comp: ['0x0Db8945f9aEf5651fa5bd52314C5aAe78DfDe540', ChainlinkRateAsset.USD],
@@ -175,7 +173,7 @@ const mainnetConfig: DeploymentConfig = {
     wdgld: '0x0000000000000000000000000000000000000000',
     xauusd: xauUsdAggregator,
   },
-  weth: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+  weth: weth,
   yearn: {
     vaultV2: {
       registry: '0x0000000000000000000000000000000000000000',
