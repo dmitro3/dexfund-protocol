@@ -33,7 +33,7 @@ fn.dependencies = ['Config', 'IntegrationManager'];
 fn.skip = async (hre) => {
   // Skip this on kovan.
   const chain = parseInt(await hre.getChainId());
-  return chain !== 1;
+  return chain !== 1 && chain !== 56;
 };
 
 export default fn;

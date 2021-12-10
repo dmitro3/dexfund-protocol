@@ -138,8 +138,8 @@ const mainnetConfig: DeploymentConfig = {
     steth: '0x0000000000000000000000000000000000000000'
   },
   paraSwapV4: {
-    augustusSwapper: '0x0000000000000000000000000000000000000000',
-    tokenTransferProxy: '0x0000000000000000000000000000000000000000',
+    augustusSwapper: '0xDEF171Fe48CF0115B1d80b88dc8eAB59176FEe57',
+    tokenTransferProxy: '0x216b4b4ba9f3e719726886d34a177484278bfcae',
   },
   policies: {
     guaranteedRedemption: {
