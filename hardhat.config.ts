@@ -157,7 +157,7 @@ const config: any = {
     },
     version: '0.6.12',
   },
-  bscscan: {
+  etherscan: {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
     apiKey: process.env.ETHERSCAN_API_KEY,
