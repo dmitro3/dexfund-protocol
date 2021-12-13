@@ -47,6 +47,7 @@
     "@enzymefinance/babel-config": "^1.0.14",
     "@enzymefinance/ethers": "^1.0.0",
     "@enzymefinance/hardhat": "^1.0.0",
+    "@enzymefinance/protocol": "^3.0.1",
     "@manypkg/cli": "^0.18.0",
     "@openzeppelin/contracts": "^3.4.1",
     "@preconstruct/cli": "^2.1.4",
